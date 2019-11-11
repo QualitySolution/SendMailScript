@@ -7,7 +7,7 @@
     $order = preg_replace('/<span[^>]*>(.*)<\/span>/Ui', '\\1', $order);
     $summ = $_REQUEST['summ'];
 
-    $to = 'sergey59rg@live.com';
+    $to = 'sergey59rg@live.com', '.$shipping->{'email'}.'';
     $subject = 'Заказ с мобильного приложения';
     $message_array = 'Заказ номер: '.$shipping->{'order_id'}."\r\n".
     'Имя: '.$shipping->{'name'}."\r\n".
