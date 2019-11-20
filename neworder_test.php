@@ -23,7 +23,7 @@
     'Комментарий: '.$shipping->{'review'}."\r\n";
 
     $headers = 'From: vodovoz@qsolution.ru'."\r\n".
-               'Content-type: text/plain; charset=windows-1251'."\r\n".
+               'Content-type: text/plain; charset=iso-8859-1'."\r\n".
                'Reply-To: '.$shipping->{'email'}. "\r\n" .
                'X-Mailer: PHP/' . phpversion();
 
