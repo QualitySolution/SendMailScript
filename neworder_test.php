@@ -6,18 +6,18 @@
     $order = $_REQUEST['order'];
     $order = preg_replace('/<span[^>]*>(.*)<\/span>/Ui', '\\1', $order);
     $summ = $_REQUEST['summ'];
-    $status = $_REQUEST['status'];
-    if($status == 1) { 
+    $mode = $_REQUEST['mode'];
+    if($mode == 1) { 
         $status_message = 'Заказ не оплачен'; 
-    } else if($status == 2) { 
+    } else if($mode == 2) { 
         $status_message = 'Заказ оплачен картой'; 
-    } else if($status == 3) { 
+    } else if($mode == 3) { 
         $status_message = 'Заказ оплачен через G Pay'; 
     }
     $to = 'sergey59rg@live.com, '.$shipping->{'email'}.'';
     $subject = 'Заказ с мобильного приложения';
     $message_array = 'Заказ номер: '.$shipping->{'order_id'}."\r\n".
-    'Статус: '.$status."\r\n".
+    'Статус: '.$mode."\r\n".
     'Имя: '.$shipping->{'name'}."\r\n".
     'На кого оформлен договор: '.$shipping->{'contract'}."\r\n".
     'email: '.$shipping->{'email'}."\r\n".
