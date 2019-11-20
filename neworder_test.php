@@ -4,12 +4,20 @@
 
     $shipping = json_decode($_REQUEST['shipping']);
     $order = $_REQUEST['order'];
+    $status = $_REQUEST['status'];
     $order = preg_replace('/<span[^>]*>(.*)<\/span>/Ui', '\\1', $order);
     $summ = $_REQUEST['summ'];
-
+    if($status == 1) { 
+        $status_message = 'Заказ не оплачен'; 
+    } else if($status == 2) { 
+        $status_message = 'Заказ оплачен картой'; 
+    } else if($status == 3) { 
+        $status_message = 'Заказ оплачен через G Pay'; 
+    }
     $to = 'sergey59rg@live.com, '.$shipping->{'email'}.'';
     $subject = 'Заказ с мобильного приложения';
     $message_array = 'Заказ номер: '.$shipping->{'order_id'}."\r\n".
+    'Статус: '.$status_message."\r\n".
     'Имя: '.$shipping->{'name'}."\r\n".
     'На кого оформлен договор: '.$shipping->{'contract'}."\r\n".
     'email: '.$shipping->{'email'}."\r\n".
@@ -23,7 +31,7 @@
     'Комментарий: '.$shipping->{'review'}."\r\n";
 
     $headers = 'From: vodovoz@qsolution.ru'."\r\n".
-               'Content-type: text/plain; charset=iso-8859-1'."\r\n".
+               'Content-type: text/plain; charset=UTF-8'."\r\n".
                'Reply-To: '.$shipping->{'email'}. "\r\n" .
                'X-Mailer: PHP/' . phpversion();
 
