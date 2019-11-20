@@ -17,7 +17,7 @@
     $to = 'sergey59rg@live.com, '.$shipping->{'email'}.'';
     $subject = 'Заказ с мобильного приложения';
     $message_array = 'Заказ номер: '.$shipping->{'order_id'}."\r\n".
-    'Статус: '.$status_message."\r\n".
+    'Статус: '.$status."\r\n".
     'Имя: '.$shipping->{'name'}."\r\n".
     'На кого оформлен договор: '.$shipping->{'contract'}."\r\n".
     'email: '.$shipping->{'email'}."\r\n".
