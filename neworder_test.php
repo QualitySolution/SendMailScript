@@ -40,7 +40,7 @@ $date = date("H:i:s d.m.Y");        //дата события
 file_put_contents($logfile, $date."|".$headers."|".$message_array."|\r\n", FILE_APPEND);
 
     if($to) {
-        if (mail($to, conv($subject), conv($message_array), $headers)) {
+        if (mail($to, conv($subject), conv($message_array), conv($headers))) {
             echo json_encode(array("status"=>"ok"));
         } else {
             echo json_encode(array("status"=>"error"));
