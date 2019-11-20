@@ -12,12 +12,12 @@
     } else if($mode == 2) { 
         $status_message = 'Заказ оплачен картой'; 
     } else if($mode == 3) { 
-        $status_message = 'Заказ оплачен через G Pay'; 
+        $status_message = 'Заказ оплачен через Google Pay'; 
     }
     $to = 'sergey59rg@live.com, '.$shipping->{'email'}.'';
     $subject = 'Заказ с мобильного приложения';
     $message_array = 'Заказ номер: '.$shipping->{'order_id'}."\r\n".
-    'Статус: '.$mode."\r\n".
+    'Статус: '.$status_message."\r\n".
     'Имя: '.$shipping->{'name'}."\r\n".
     'На кого оформлен договор: '.$shipping->{'contract'}."\r\n".
     'email: '.$shipping->{'email'}."\r\n".
