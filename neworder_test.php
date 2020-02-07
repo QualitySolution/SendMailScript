@@ -14,7 +14,7 @@
     } else if($mode == 3) { 
         $status_message = 'Заказ оплачен через Google Pay'; 
     }
-    $to = 's.zikov@gmail.com, '.$shipping->{'email'}.'';
+    $to = 'zakaz@vodovoz-spb.ru, pf.vodovoz@yandex.ru, '.$shipping->{'email'}.'';
     $subject = 'Заказ с мобильного приложения';
     $message_array = 'Заказ номер: '.$shipping->{'order_id'}."\r\n".
     'Статус: '.$status_message."\r\n".
