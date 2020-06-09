@@ -22,8 +22,8 @@
     'На кого оформлен договор: '.$shipping->{'contract'}."\r\n".
     'email: '.$shipping->{'email'}."\r\n".
     'Телефон: '.$shipping->{'phone'}."\r\n".
-    'Дата доставки(получения): '.date('Y-m-d', strtotime(str_replace('/', '-', $shipping->{'date'})))."\r\n".
-    /*'Дата доставки(получения): '.date('Y-m-d', strtotime($shipping->{'date'}))."\r\n".*/
+    /*'Дата доставки(получения): '.date('Y-m-d', strtotime(str_replace('/', '-', $shipping->{'date'})))."\r\n".*/
+    'Дата доставки(получения): '.date('Y-m-d', strtotime($shipping->{'date'}))."\r\n".
     /*'Время доставки(получения): '.date('H:i:s', strtotime($shipping->{'time'}))."\r\n".*/
     'Товары: '.$order.
     'Сумма заказа: '.$summ."\r\n".
